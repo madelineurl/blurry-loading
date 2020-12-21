@@ -1,15 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   margin: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  /* you can still use justify content if the flex-direction is column!
-  but it doesn't do anything */
   height: 100vh;
+  overflow: hidden;
   align-items: center;
+}
+
+.bg {
+  background: url('https://images.unsplash.com/photo-1479722842840-c0a823bd0cd6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80') no-repeat center center/cover;
+  /* center on the x/y axis and cover for the position */
+  position: absolute;
+  top: -30;
+  left: -30;
+  /* initially set top/left to 0, creates weird blur edges
+  fix by offsetting top and left then using calc to make
+  right and bottom look the same
+  */
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  z-index: -1;
+  filter: blur(0px);
+  /* look into this feature! */
+}
+
+.loading-text {
+  font-size: 50px;
+  color: #fff;
 }
